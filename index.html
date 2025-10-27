@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himanshu Jestha - Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ==============================
+   GLOBAL STYLES
+============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #6366f1;
+    --secondary: #8b5cf6;
+    --accent: #ec4899;
+    --bg-main: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --border: #475569;
+}
+
+[data-theme="light"] {
+    --primary: #6366f1;
+    --secondary: #8b5cf6;
+    --accent: #ec4899;
+    --bg-main: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-card: #f1f5f9;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ==============================
+   HEADER
+============================== */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+}
+
+[data-theme="light"] header {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.2rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    padding: 0.5rem 0;
+}
+
+.nav-menu a:hover {
+    color: var(--primary);
+}
+
+.theme-switch {
+    background: var(--bg-card);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    transition: transform 0.3s;
+}
+
+.theme-switch:hover {
+    transform: rotate(180deg);
+}
+
+/* ==============================
+   HERO SECTION
+============================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+    opacity: 0.15;
+    top: -250px;
+    right: -250px;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.hero-content {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.hero-text .highlight {
+    color: var(--primary);
+}
+
+.hero-text .role {
+    font-size: 1.8rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 0.9rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background: var(--bg-card);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    transition: all 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.image-container {
+    width: 320px;
+    height: 320px;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.05);
+}
+
+.image-placeholder img {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* ==============================
+   SECTIONS
+============================== */
+section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.section-header .underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    margin: 1rem auto;
+}
+
+/* ==============================
+   SKILLS
+============================== */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-item {
+    background: var(--bg-secondary);
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.skill-item:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.skill-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 0.8rem;
+}
+
+.skill-item p {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ==============================
+   PROJECTS (FIXED)
+============================== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid var(--border);
+}
+
+.project-info {
+    flex-grow: 1;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-date {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-badge {
+    background: var(--bg-card);
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+/* ==============================
+   EDUCATION
+============================== */
+.education-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.education-item {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    transition: all 0.3s;
+}
+
+.education-item:hover {
+    transform: translateX(10px);
+}
+
+.education-item h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.education-meta {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.education-score {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* ==============================
+   CONTACT
+============================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.2rem;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.contact-item:hover {
+    background: var(--bg-card);
+}
+
+.contact-item i {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contact-item a {
+    color: var(--text-primary);
+    text-decoration: none;
+}
+
+.contact-form {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.9rem;
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: inherit;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+/* ==============================
+   SCROLL TO TOP
+============================== */
+.scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 99;
+}
+
+.scroll-top.show {
+    display: flex;
+}
+
+.scroll-top:hover {
+    transform: translateY(-5px);
+}
+
+/* ==============================
+   RESPONSIVE
+============================== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 968px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: var(--bg-secondary);
+        flex-direction: column;
+        padding: 4rem 2rem;
+        transition: right 0.3s;
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .image-container {
+        width: 260px;
+        height: 260px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="#" class="brand">HJ</a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="theme-switch" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Himanshu Jestha</span></h1>
+                <p class="role">Computer Science Student & Developer</p>
+                <p>Passionate about building innovative web applications and solving complex problems through code. Currently pursuing B.Tech in CSE at Graphic Era Hill University.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i> Get in Touch
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fas fa-briefcase"></i> View Projects
+                    </a>
+                </div>
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/himanshu-jestha-a10523322" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/himanshujestha" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:himanshujestha3@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:+917037201791"><i class="fas fa-phone"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="image-placeholder">
+                        <img src="assets/himanshu.jpg" alt="">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <h2>Technical Skills</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <i class="fab fa-html5"></i>
+                <p>HTML</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-css3-alt"></i>
+                <p>CSS</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-js"></i>
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-react"></i>
+                <p>React</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-node"></i>
+                <p>Node.js</p>
+            </div>
+            <div class="skill-item">
+                <i class="fab fa-python"></i>
+                <p>Python</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-code"></i>
+                <p>C/C++</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <p>MongoDB</p>
+            </div>
+            <div class="skill-item">
+                <i class="fas fa-database"></i>
+                <p>MySQL</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <h2>Featured Projects</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-cloud-sun"></i>
+                </div>
+                <div class="project-info">
+                    <img src="assets/weather.png" alt="">
+                    <h3>Weather Application</h3>
+                    <p class="project-date">May 2025 – June 2025</p>
+                    <p>Developed a weather dashboard for real-time location-based updates with OpenWeatherMap API integration and component-based design.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">HTML</span>
+                        <span class="tech-badge">CSS</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-file-upload"></i>
+                </div>
+                <div class="project-info">
+                    <img src="assets/file tr.png" alt="">
+                    <h3>File Sharing App</h3>
+                    <p class="project-date">Mar 2025 – Apr 2025</p>
+                    <p>Built a scalable backend for secure file upload and download functionality with MongoDB for metadata management and real-time status feedback.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">MongoDB</span>
+                        <span class="tech-badge">REST API</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <div class="project-info">
+                    <img src="assets/face.png" alt="">
+                    <h3>Face Detection Attendance</h3>
+                    <p class="project-date">Feb 2025 – Mar 2025</p>
+                    <p>Designed real-time attendance system using face recognition technology with Flask-based user management and optimized recognition performance.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">OpenCV</span>
+                        <span class="tech-badge">Flask</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <div class="project-info">
+                    <img src="assets/email spam.png" alt="">
+                    <h3>Mail Spam Detection</h3>
+                    <p class="project-date">Nov 2024 – Dec 2024</p>
+                    <p>Implemented Logistic Regression ML model trained on 5,000+ messages achieving 94% classification accuracy using scikit-learn.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">ML</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="section-header">
+            <h2>Education</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="education-list">
+            <div class="education-item">
+                <h3>B.Tech in Computer Science and Engineering</h3>
+                <p class="education-meta">Graphic Era Hill University, Dehradun | Aug 2022 – May 2026</p>
+                <p class="education-score">CGPA: 7.28/10</p>
+            </div>
+            <div class="education-item">
+                <h3>Intermediate (PCM)</h3>
+                <p class="education-meta">SMTHDBVVMIC Munsyari (State Board) | 2022</p>
+                <p class="education-score">Percentage: 83.8%</p>
+            </div>
+            <div class="education-item">
+                <h3>High School</h3>
+                <p class="education-meta">SMTHDBVVMIC Munsyari (State Board) | 2020</p>
+                <p class="education-score">Percentage: 88.6%</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="section-header">
+            <h2>Achievements</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="achievements-list">
+            <div class="achievement-item">
+                <div class="achievement-icon">
+                    <i class="fas fa-trophy"></i>
+                </div>
+                <p>Qualified for the final round of Galgotias International Hackathon (2024)</p>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <p>Solved 100+ coding questions on LeetCode, Codeforces, and other platforms</p>
+            </div>
+            <div class="achievement-item">
+                <div class="achievement-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <p>Team leader of the semester project in previous semester</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <p><strong>Email</strong></p>
+                        <a href="mailto:himanshujestha3@gmail.com">himanshujestha3@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <p><strong>Phone</strong></p>
+                        <a href="tel:+917037201791">+91 7037201791</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <p><strong>Location</strong></p>
+                        <p>Dehradun, India</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <div>
+                        <p><strong>LinkedIn</strong></p>
+                        <a href="https://linkedin.com/in/himanshu-jestha-a10523322" target="_blank">Connect with me</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                    <div id="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Himanshu Jestha. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        const themeIcon = themeToggle.querySelector('i');
+
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        html.setAttribute('data-theme', currentTheme);
+        updateThemeIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        }
+
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking on a link
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to Top Button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('show');
+            } else {
+                scrollTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Active Nav Link on Scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Contact Form Handling (Ready for EmailJS)
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            // Show loading state
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            // Simulate form submission (replace with EmailJS code)
+            setTimeout(() => {
+                formStatus.style.display = 'block';
+                formStatus.className = 'success';
+                formStatus.textContent = 'Message sent successfully! I will get back to you soon.';
+                
+                // Reset form
+                contactForm.reset();
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formStatus.style.display = 'none';
+                }, 5000);
+            }, 1500);
+
+            // REPLACE THE ABOVE setTimeout WITH THIS EMAILJS CODE:
+            /*
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData)
+                .then(function(response) {
+                    formStatus.style.display = 'block';
+                    formStatus.className = 'success';
+                    formStatus.textContent = 'Message sent successfully! I will get back to you soon.';
+                    contactForm.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    
+                    setTimeout(() => {
+                        formStatus.style.display = 'none';
+                    }, 5000);
+                }, function(error) {
+                    formStatus.style.display = 'block';
+                    formStatus.className = 'error';
+                    formStatus.textContent = 'Failed to send message. Please try again.';
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            */
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and items
+        document.querySelectorAll('.skill-item, .project-card, .education-item, .achievement-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+
+    <!-- EmailJS Library (Uncomment and add your keys when ready) -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("YOUR_PUBLIC_KEY");
+        })();
+    </script>
+    -->
+</body>
+</html>
