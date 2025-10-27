@@ -2,7 +2,7 @@
 
 A personal portfolio website built using **HTML, CSS, and JavaScript** — showcasing my skills, projects, and achievements with a clean and responsive design.
 
-![Portfolio Preview]
+![Portfolio Preview]    https://himanshujestha.github.io/Portfolio/
 ---
 ## 🚀 Features
 
